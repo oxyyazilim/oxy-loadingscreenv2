@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oxy Loading Screen</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="images-active">
+    <div class="background">
+        <iframe id="ytPlayer" class="background-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+        <div class="background-images" id="bgImages">
+            <!-- Arka plan görselleri JS ile eklenecek -->
+        </div>
+    </div>
+    
+    <div class="overlay"></div>
+    
+    <div class="header">
+        <div class="server-logo">
+            <img id="serverLogo" src="" alt="Server Logo">
+        </div>
+        <div class="server-name">
+            <h1 id="serverName">Oxy Loading Screen</h1>
+            <h2 id="serverSlogan">Hayallerinizin ötesinde bir roleplay deneyimi</h2>
+        </div>
+    </div>
+    
+    <div class="server-rules">
+        <div class="rules-header">
+            <i class="fas fa-scroll" style="color: #a855f7;"></i>
+            <h3>Sunucu Kuralları</h3>
+        </div>
+        <div class="rules-list" id="rulesList">
+            <!-- Kurallar JS ile eklenecek -->
+        </div>
+    </div>
+    
+    <div class="server-gallery">
+        <div class="gallery-header">
+            <i class="fas fa-images" style="color: #a855f7;"></i>
+            <h3>Sunucu Galerisi</h3>
+        </div>
+        <div class="gallery-images" id="galleryImages">
+            <!-- Galeri görselleri JS ile eklenecek -->
+        </div>
+    </div>
+    
+<div class="right-panel">
+    <div class="announcements">
+        <div class="announcement-header">
+            <h3><i class="fas fa-bullhorn" style="margin-right: 5px; color: #a855f7;"></i> Duyurular</h3>
+        </div>
+        <div id="announcementsList">
+            <!-- Duyurular JS ile eklenecek -->
+        </div>
+    </div>
+    
+    <div class="team-section">
+        <div class="team-header">
+            <h3><i class="fas fa-users" style="margin-right: 5px; color: #a855f7;"></i> Yetkili Ekip</h3>
+        </div>
+        <div class="team-members" id="teamMembers">
+            <!-- Yetkili ekip JS ile eklenecek -->
+        </div>
+    </div>
+    
+    <div class="music-player">
+        <div class="music-header">
+            <h3><i class="fas fa-music" style="margin-right: 5px; color: #a855f7;"></i> Şu an çalıyor</h3>
+        </div>
+        <div class="music-content">
+            <div class="music-album" id="musicAlbum"></div>
+            <div class="music-info">
+                <div class="music-title" id="musicTitle">Şarkı Adı</div>
+                <div class="music-artist" id="musicArtist">Sanatçı</div>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <div class="time-stamps">
+                    <span>0:00</span>
+                    <span>0:00</span>
+                </div>
+                <div class="control-buttons">
+                    <div class="control-button">
+                        <i class="fas fa-backward"></i>
+                    </div>
+                    <div class="control-button play-pause">
+                        <i class="fas fa-pause"></i>
+                    </div>
+                    <div class="control-button">
+                        <i class="fas fa-forward"></i>
+                    </div>
+                </div>
+                <div class="volume-control">
+                    <i class="fas fa-volume-up volume-icon"></i>
+                    <div class="volume-slider">
+                        <div class="volume-level"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="background-switch">
+        <div class="switch-button" id="bgSwitchBtn">
+            <i class="fas fa-images"></i>
+            <span>Arkaplanı Değiştir</span>
+        </div>
+    </div>
+    
+    <div class="color-picker-panel">
+    <div class="color-picker-header">
+        <h3>Renk Ayarları</h3>
+        <i class="fas fa-times close-panel"></i>
+    </div>
+    
+    <div class="color-tabs">
+        <div class="color-tab active" data-tab="primary">Ana Renk</div>
+        <div class="color-tab" data-tab="secondary">İkincil Renk</div>
+        <div class="color-tab" data-tab="text">Yazı Rengi</div>
+        <div class="color-tab" data-tab="background">Arkaplan</div>
+    </div>
+    
+    <div class="color-content">
+        <!-- Ana Renk Tab İçeriği -->
+        <div class="tab-content active" id="tab-primary">
+            <div class="color-palette">
+                <div class="color-wheel" id="primaryColorWheel">
+                    <!-- Renk tekerleği SVG buraya gelecek -->
+                </div>
+                <input type="color" id="primaryColor" value="#a855f7">
+                <div class="color-preview" id="primaryColorPreview"></div>
+            </div>
+            <div class="color-presets">
+                <div class="preset-color" style="background-color: #a855f7;" data-color="#a855f7" data-type="primary"></div>
+                <div class="preset-color" style="background-color: #3b82f6;" data-color="#3b82f6" data-type="primary"></div>
+                <div class="preset-color" style="background-color: #10b981;" data-color="#10b981" data-type="primary"></div>
+                <div class="preset-color" style="background-color: #ef4444;" data-color="#ef4444" data-type="primary"></div>
+                <div class="preset-color" style="background-color: #f59e0b;" data-color="#f59e0b" data-type="primary"></div>
+            </div>
+        </div>
+        
+        <!-- İkincil Renk Tab İçeriği -->
+        <div class="tab-content" id="tab-secondary">
+            <div class="color-palette">
+                <div class="color-wheel" id="secondaryColorWheel">
+                    <!-- Renk tekerleği SVG buraya gelecek -->
+                </div>
+                <input type="color" id="secondaryColor" value="#6b21a8">
+                <div class="color-preview" id="secondaryColorPreview"></div>
+            </div>
+            <div class="color-presets">
+                <div class="preset-color" style="background-color: #6b21a8;" data-color="#6b21a8" data-type="secondary"></div>
+                <div class="preset-color" style="background-color: #1d4ed8;" data-color="#1d4ed8" data-type="secondary"></div>
+                <div class="preset-color" style="background-color: #065f46;" data-color="#065f46" data-type="secondary"></div>
+                <div class="preset-color" style="background-color: #b91c1c;" data-color="#b91c1c" data-type="secondary"></div>
+                <div class="preset-color" style="background-color: #b45309;" data-color="#b45309" data-type="secondary"></div>
+            </div>
+        </div>
+        
+        <!-- Yazı Rengi Tab İçeriği -->
+        <div class="tab-content" id="tab-text">
+            <div class="color-palette">
+                <div class="color-wheel" id="textColorWheel">
+                    <!-- Renk tekerleği SVG buraya gelecek -->
+                </div>
+                <input type="color" id="textColor" value="#ffffff">
+                <div class="color-preview" id="textColorPreview"></div>
+            </div>
+            <div class="color-presets">
+                <div class="preset-color" style="background-color: #ffffff;" data-color="#ffffff" data-type="text"></div>
+                <div class="preset-color" style="background-color: #f3f4f6;" data-color="#f3f4f6" data-type="text"></div>
+                <div class="preset-color" style="background-color: #e5e7eb;" data-color="#e5e7eb" data-type="text"></div>
+                <div class="preset-color" style="background-color: #d1d5db;" data-color="#d1d5db" data-type="text"></div>
+                <div class="preset-color" style="background-color: #9ca3af;" data-color="#9ca3af" data-type="text"></div>
+            </div>
+        </div>
+        
+        <!-- Arkaplan Tab İçeriği -->
+        <div class="tab-content" id="tab-background">
+            <div class="color-palette">
+                <div class="color-wheel" id="bgColorWheel">
+                    <!-- Renk tekerleği SVG buraya gelecek -->
+                </div>
+                <input type="color" id="bgColor" value="#000000">
+                <div class="color-preview" id="bgColorPreview"></div>
+            </div>
+            <div class="color-presets">
+                <div class="preset-color" style="background-color: #000000;" data-color="#000000" data-type="bg"></div>
+                <div class="preset-color" style="background-color: #111827;" data-color="#111827" data-type="bg"></div>
+                <div class="preset-color" style="background-color: #1f2937;" data-color="#1f2937" data-type="bg"></div>
+                <div class="preset-color" style="background-color: #374151;" data-color="#374151" data-type="bg"></div>
+                <div class="preset-color" style="background-color: #4b5563;" data-color="#4b5563" data-type="bg"></div>
+            </div>
+            <div class="gradient-option">
+                <label for="gradientIntensity">Gradyan Yoğunluğu:</label>
+                <input type="range" id="gradientIntensity" min="0" max="1" step="0.1" value="0.7">
+            </div>
+        </div>
+    </div>
+    
+    <button id="resetColors">Renkleri Sıfırla</button>
+</div>
+    
+    <div class="settings-button" id="settingsBtn">
+        <i class="fas fa-paint-brush"></i>
+    </div>
+    
+    <!-- Klavye tuşları butonu -->
+    <div class="keyboard-shortcuts-btn" id="keyboardBtn">
+        <i class="fas fa-keyboard"></i>
+    </div>
+    
+    <!-- Gerçek Klavye Paneli -->
+    <div class="keyboard-visual-panel" id="keyboardVisualPanel">
+        <div class="panel-header">
+            <h3>Klavye Kısayolları</h3>
+            <i class="fas fa-times close-keyboard-visual"></i>
+        </div>
+        <div class="keyboard-container">
+            <!-- Klavye Görünümü -->
+            <div class="keyboard-visual">
+                <!-- Fonksiyon Tuşları (F1-F12) -->
+                <div class="keyboard-row function-keys">
+                    <div class="key key-function" data-key="27">Esc</div>
+                    <div class="key key-function" data-key="112">F1</div>
+                    <div class="key key-function" data-key="113">F2</div>
+                    <div class="key key-function" data-key="114">F3</div>
+                    <div class="key key-function" data-key="115">F4</div>
+                    <div class="key key-function" data-key="116">F5</div>
+                    <div class="key key-function" data-key="117">F6</div>
+                    <div class="key key-function" data-key="118">F7</div>
+                    <div class="key key-function" data-key="119">F8</div>
+                    <div class="key key-function" data-key="120">F9</div>
+                    <div class="key key-function" data-key="121">F10</div>
+                    <div class="key key-function" data-key="122">F11</div>
+                    <div class="key key-function" data-key="123">F12</div>
+                </div>
+                
+                <!-- Rakam Tuşları -->
+                <div class="keyboard-row">
+                    <div class="key" data-key="192">~</div>
+                    <div class="key" data-key="49">1</div>
+                    <div class="key" data-key="50">2</div>
+                    <div class="key" data-key="51">3</div>
+                    <div class="key" data-key="52">4</div>
+                    <div class="key" data-key="53">5</div>
+                    <div class="key" data-key="54">6</div>
+                    <div class="key" data-key="55">7</div>
+                    <div class="key" data-key="56">8</div>
+                    <div class="key" data-key="57">9</div>
+                    <div class="key" data-key="48">0</div>
+                    <div class="key" data-key="189">-</div>
+                    <div class="key" data-key="187">=</div>
+                    <div class="key key-wide" data-key="8">Backspace</div>
+                </div>
+                
+                <!-- QWERTY Satırı -->
+                <div class="keyboard-row">
+                    <div class="key key-wide" data-key="9">Tab</div>
+                    <div class="key" data-key="81">Q</div>
+                    <div class="key" data-key="87">W</div>
+                    <div class="key" data-key="69">E</div>
+                    <div class="key" data-key="82">R</div>
+                    <div class="key" data-key="84">T</div>
+                    <div class="key" data-key="89">Y</div>
+                    <div class="key" data-key="85">U</div>
+                    <div class="key" data-key="73">I</div>
+                    <div class="key" data-key="79">O</div>
+                    <div class="key" data-key="80">P</div>
+                    <div class="key" data-key="219">[</div>
+                    <div class="key" data-key="221">]</div>
+                    <div class="key" data-key="220">\</div>
+                </div>
+                
+                <!-- ASDF Satırı -->
+                <div class="keyboard-row">
+                    <div class="key key-wide" data-key="20">Caps</div>
+                    <div class="key" data-key="65">A</div>
+                    <div class="key" data-key="83">S</div>
+                    <div class="key" data-key="68">D</div>
+                    <div class="key" data-key="70">F</div>
+                    <div class="key" data-key="71">G</div>
+                    <div class="key" data-key="72">H</div>
+                    <div class="key" data-key="74">J</div>
+                    <div class="key" data-key="75">K</div>
+                    <div class="key" data-key="76">L</div>
+                    <div class="key" data-key="186">;</div>
+                    <div class="key" data-key="222">'</div>
+                    <div class="key key-wide" data-key="13">Enter</div>
+                </div>
+                
+                <!-- ZXCV Satırı -->
+                <div class="keyboard-row">
+                    <div class="key key-wider" data-key="16">Shift</div>
+                    <div class="key" data-key="90">Z</div>
+                    <div class="key" data-key="88">X</div>
+                    <div class="key" data-key="67">C</div>
+                    <div class="key" data-key="86">V</div>
+                    <div class="key" data-key="66">B</div>
+                    <div class="key" data-key="78">N</div>
+                    <div class="key" data-key="77">M</div>
+                    <div class="key" data-key="188">,</div>
+                    <div class="key" data-key="190">.</div>
+                    <div class="key" data-key="191">/</div>
+                    <div class="key key-wider" data-key="16">Shift</div>
+                </div>
+                
+                <!-- Alt Satır -->
+                <div class="keyboard-row">
+                    <div class="key key-wide" data-key="17">Ctrl</div>
+                    <div class="key key-wide" data-key="91">Win</div>
+                    <div class="key key-wide" data-key="18">Alt</div>
+                    <div class="key key-space" data-key="32">Space</div>
+                    <div class="key key-wide" data-key="18">Alt</div>
+                    <div class="key key-wide" data-key="93">Menu</div>
+                    <div class="key key-wide" data-key="17">Ctrl</div>
+                </div>
+            </div>
+        </div>
+        <div class="keyboard-description" id="keyDescription">
+            <!-- Seçilen tuş açıklaması burada gösterilecek -->
+            <div class="keyboard-description-inner">
+                <span class="description-title">Bir tuşa tıklayın veya basın</span>
+                <span class="description-text">Tuş işlevi burada gösterilecek</span>
+            </div>
+        </div>
+    </div>
+    
+<div class="footer-social-icons">
+    <div id="socialIcons">
+        <!-- İkonlar JS ile eklenecek -->
+    </div>
+</div>
+
+    
+<!-- Yeni SVG yükleme çubuğu -->
+<div class="loading-container" style="bottom: 127px;"> <!-- 50px yukarı aldık -->
+    <svg class="loading-svg" width="300" height="30" viewBox="0 0 300 30">
+        <defs>
+            <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y1="0%" y2="0%">
+                <stop offset="0%" class="gradient-start" />
+                <stop offset="100%" class="gradient-end" />
+            </linearGradient>
+            <clipPath id="progressClip">
+                <rect x="0" y="0" width="0" height="30" id="progressClipRect" />
+            </clipPath>
+        </defs>
+        
+        <!-- Boş oklar (arkaplan) -->
+        <g class="arrows-bg">
+            <!-- SVG oklar buraya gelecek -->
+        </g>
+        
+        <!-- Dolu oklar (ilerleme) -->
+        <g class="arrows-progress" clip-path="url(#progressClip)">
+            <!-- Aynı oklar buraya da gelecek, ama renkli olacak -->
+        </g>
+    </svg>
+</div>
+<div class="loading-text-new" id="loadingTextNew" style="bottom: 162px;">Bağlanılıyor...</div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
